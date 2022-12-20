@@ -10,158 +10,182 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      appBar: AppBar(toolbarHeight: 0),
-      body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 10.w),
-        child: Column(
-          //mainAxisAlignment: MainAxisAlignment.center,
-          //crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            SizedBox(height: 10.h),
-            Text(
-              "Welcome",
-              style: TextStyle(color: Colors.black, fontSize: 3.h),
-            ),
-            Container(
-              height: 15.h,
-              width: 30.w,
-              margin: EdgeInsets.only(top: 2.h),
-              decoration: BoxDecoration(
-                  color: Color(0xff303243),
-                  shape: BoxShape.circle,
-                  border: Border.all(width: 0.3.w, color: Colors.grey),
-                  image: DecorationImage(
-                      image: NetworkImage(
-                          "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"))),
-              /* child: Image.network(
-                "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png",
-                fit: BoxFit.fill,
-              ), */
-            ),
-            SizedBox(
-              height: 2.h,
-            ),
-            TextFormField(
-              //e-mail
-              onTap: () {},
-              keyboardType: TextInputType.emailAddress,
+      backgroundColor: Color(0xff000000),
+      appBar: AppBar(
+        toolbarHeight: 0,
+        backgroundColor: Color(0xff000000),
+      ),
+      body: Column(
+        children: [
+          SizedBox(
+              height: 30.h,
+              width: 100.w,
+              child: Image.asset(
+                "assets/background.png",
+                fit: BoxFit.cover,
+              )),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 5.w),
+            child: Column(
+              children: [
+                
+                Text(
+                  "Welcome",
+                  style: TextStyle(color: Color(0xffFFFFFF), fontSize: 3.3.h,fontWeight: FontWeight.w500,letterSpacing: 0.3.w),
+                ),
+                SizedBox(
+                  height: 1.h,
+                ),
+                Text(
+                  "Login to your account",
+                  style: TextStyle(color: Color(0xffFFFFFF), fontSize: 3.h,fontWeight: FontWeight.w400),
+                ),
+                SizedBox(
+                  height: 4.h,
+                ),
+                TextFormField(
+                  //e-mail
+                  onTap: () {},
+                  style: TextStyle(color: Color(0xffFFFFFF)),
+                  keyboardType: TextInputType.emailAddress,
 
-              textAlignVertical: TextAlignVertical.center,
-              decoration: InputDecoration(
-                prefixIcon: Icon(
-                  Icons.email,
-                  color: Colors.black,
-                ),
-                hintText: "E-Mail",
-                hintStyle: TextStyle(
-                    color: Colors.black,
-                    letterSpacing: 2.5,
-                    fontWeight: FontWeight.w500),
-                enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.grey, width: 0.3.w)),
-                focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.black, width: 0.4.w)),
-              ),
-            ),
-            SizedBox(
-              height: 2.h,
-            ),
-            TextFormField(
-              //password
-              keyboardType: TextInputType.number,
-              textAlignVertical: TextAlignVertical.center,
-              decoration: InputDecoration(
-                prefixIcon: Icon(
-                  Icons.key_sharp,
-                  color: Colors.black,
-                ),
-                hintText: "Password",
-                hintStyle: TextStyle(
-                    color: Colors.black,
-                    letterSpacing: 1,
-                    fontWeight: FontWeight.w500),
-                enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.grey, width: 0.3.w)),
-                focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.black, width: 0.4.w)),
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.only(top: 4.h, left: 3.w, right: 3.w),
-              child: ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.green,
-                    side: BorderSide(color: Colors.black, width: 0.25.w)),
-                child: Center(
-                  child: Text(
-                    "Login",
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 3.5.h,
-                        fontWeight: FontWeight.w500,
-                        letterSpacing: 4),
+                  textAlignVertical: TextAlignVertical.center,
+                  decoration: InputDecoration(
+                    isDense: true,
+                    prefixIcon: Icon(
+                      Icons.email,
+                      color: Color(0xffFFFFFF),
+                    ),
+                    hintText: "E-Mail",
+                    hintStyle: TextStyle(
+                        color: Color(0xffFFFFFF),
+                        letterSpacing: 2.5,
+                        fontWeight: FontWeight.w500),
+                    enabledBorder: OutlineInputBorder(
+                        borderSide:
+                            BorderSide(color: Color(0xffFFFFFF), width: 0.3.w)),
+                    focusedBorder: OutlineInputBorder(
+                        borderSide:
+                            BorderSide(color: Color(0xffFFFFFF), width: 0.4.w)),
                   ),
                 ),
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.only(left: 3.w, right: 3.w, top: 1.5.h),
-              child: ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blue,
-                    side: BorderSide(color: Colors.black, width: 0.25.w)),
-                child: Center(
-                  child: Text(
-                    "Register",
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 3.5.h,
-                        fontWeight: FontWeight.w500,
-                        letterSpacing: 4),
+                SizedBox(
+                  height: 2.h,
+                ),
+                TextFormField(
+                  //password
+                  style: TextStyle(color: Color(0xffFFFFFF)),
+                  //inputFormatters: [FilteringTextInputFormatter.digitsOnly], sadece sayı olması için
+                  //keyboardType: TextInputType.number,
+                  textAlignVertical: TextAlignVertical.center,
+                  decoration: InputDecoration(
+                    isDense: true,
+                    prefixIcon: Icon(
+                      Icons.key_sharp,
+                      color: Color(0xffFFFFFF),
+                    ),
+                    suffixIcon: Icon(
+                      Icons.visibility,
+                      color: Color(0xffFFFFFF),
+                    ),
+                    hintText: "Password",
+                    hintStyle: TextStyle(
+                        color: Color(0xffFFFFFF),
+                        letterSpacing: 1,
+                        fontWeight: FontWeight.w500),
+                    enabledBorder: OutlineInputBorder(
+                        borderSide:
+                            BorderSide(color: Color(0xffFFFFFF), width: 0.3.w)),
+                    focusedBorder: OutlineInputBorder(
+                        borderSide:
+                            BorderSide(color: Color(0xffFFFFFF), width: 0.4.w)),
                   ),
                 ),
-              ),
+                SizedBox(
+                  height: 1.h,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Text("Forgot Password?",
+                        style: TextStyle(
+                            color: Color(0xffEA4335),
+                            fontSize: 2.h,
+                            fontWeight: FontWeight.w400))
+                  ],
+                ),
+                Padding(
+                  padding: EdgeInsets.only(top: 4.h, left: 3.w, right: 3.w),
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.green,
+                        side: BorderSide(color: Colors.black, width: 0.25.w),
+                        alignment: Alignment.center,
+                        minimumSize: Size(10.w, 6.h),
+                        shape: StadiumBorder()),
+                    child: Center(
+                      child: Text(
+                        "Login",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 3.5.h,
+                            fontWeight: FontWeight.w500,
+                            letterSpacing: 4),
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 2.h,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text("Don’t have account?",
+                        style: TextStyle(
+                            color: Color(0xff616161),
+                            fontSize: 2.h,
+                            fontWeight: FontWeight.w400,
+                            letterSpacing: 0.3.w)),
+                    SizedBox(
+                      width: 3.w,
+                    ),
+                    GestureDetector(
+                      onTap: () {},
+                      child: Text("Create Now",
+                          style: TextStyle(
+                              color: Color(0xffD9D9D9),
+                              fontSize: 2.h,
+                              fontWeight: FontWeight.w600)),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 10.h,
+                ),
+                SizedBox(
+                  width: 45.w,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      GestureDetector(
+                          onTap: () {}, child: Image.asset("assets/gmail.png")),
+                      Spacer(),
+                      GestureDetector(
+                          onTap: () {},
+                          child: Image.asset("assets/facebook.png")),
+                      Spacer(),
+                      GestureDetector(
+                          onTap: () {},
+                          child: Image.asset("assets/instagram.png")),
+                    ],
+                  ),
+                ),
+              ],
             ),
-            /* Container(
-              height: 7.h,
-              width: double.infinity,
-              margin: EdgeInsets.only(top: 3.h),
-              decoration: BoxDecoration(
-                  color: Colors.green,
-                  borderRadius: BorderRadius.circular(5.w)),
-              child: Center(
-                child: Text(
-                  "Login",
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 4.h,
-                      fontWeight: FontWeight.w600,
-                      letterSpacing: 4),
-                ),
-              ),
-            ), */
-
-            /* Container(
-              height: 7.h,
-              width: double.infinity,
-              margin: EdgeInsets.only(top: 3.h),
-              decoration: BoxDecoration(
-                  color: Colors.blue, borderRadius: BorderRadius.circular(5.w)),
-              child: Center(
-                child: Text(
-                  "Register",
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 4.h,
-                      fontWeight: FontWeight.w600,
-                      letterSpacing: 4),
-                ),
-              ),
-            ) */
-          ],
-        ),
+          )
+        ],
       ),
     );
   }
