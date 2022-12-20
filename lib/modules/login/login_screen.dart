@@ -1,9 +1,11 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
+import 'package:feuerbase_ex/modules/login/login_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends GetView<LoginController> {
   const LoginScreen({super.key});
 
   @override
@@ -42,7 +44,7 @@ class LoginScreen extends StatelessWidget {
                 Text(
                   "Login to your account",
                   style: TextStyle(
-                      color: Color(0xffFFFFFF),
+                      color: Color(0xffC4C4C4),
                       fontSize: 3.h,
                       fontWeight: FontWeight.w400),
                 ),
@@ -194,7 +196,9 @@ class LoginScreen extends StatelessWidget {
                       width: 3.w,
                     ),
                     GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                        controller.pageChanger();
+                      },
                       child: Text("Create Now",
                           style: TextStyle(
                               color: Color(0xffD9D9D9),
