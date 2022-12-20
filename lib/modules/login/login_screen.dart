@@ -28,27 +28,50 @@ class LoginScreen extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 5.w),
             child: Column(
               children: [
-                
                 Text(
                   "Welcome",
-                  style: TextStyle(color: Color(0xffFFFFFF), fontSize: 3.3.h,fontWeight: FontWeight.w500,letterSpacing: 0.3.w),
+                  style: TextStyle(
+                      color: Color(0xffFFFFFF),
+                      fontSize: 3.3.h,
+                      fontWeight: FontWeight.w500,
+                      letterSpacing: 0.3.w),
                 ),
                 SizedBox(
                   height: 1.h,
                 ),
                 Text(
                   "Login to your account",
-                  style: TextStyle(color: Color(0xffFFFFFF), fontSize: 3.h,fontWeight: FontWeight.w400),
+                  style: TextStyle(
+                      color: Color(0xffFFFFFF),
+                      fontSize: 3.h,
+                      fontWeight: FontWeight.w400),
                 ),
                 SizedBox(
-                  height: 4.h,
+                  height: 3.h,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    
+                    Text(
+                      "E-Mail",
+                      style: TextStyle(
+                            color: Color(0xffFFFFFF),
+                            letterSpacing: 1,
+                            fontWeight: FontWeight.w600,
+                            fontSize: 2.h
+                            ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 1.4.h,
                 ),
                 TextFormField(
                   //e-mail
                   onTap: () {},
                   style: TextStyle(color: Color(0xffFFFFFF)),
                   keyboardType: TextInputType.emailAddress,
-
                   textAlignVertical: TextAlignVertical.center,
                   decoration: InputDecoration(
                     isDense: true,
@@ -72,6 +95,25 @@ class LoginScreen extends StatelessWidget {
                 SizedBox(
                   height: 2.h,
                 ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    
+                    Text(
+                      "Password",
+                      style: TextStyle(
+                            color: Color(0xffFFFFFF),
+                            letterSpacing: 1,
+                            fontWeight: FontWeight.w600,
+                            fontSize: 2.h
+                            ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 1.4.h,
+                ),
+                
                 TextFormField(
                   //password
                   style: TextStyle(color: Color(0xffFFFFFF)),
