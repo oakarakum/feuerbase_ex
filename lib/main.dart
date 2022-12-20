@@ -1,4 +1,8 @@
+import 'package:feuerbase_ex/modules/login/login_screen.dart';
+import 'package:feuerbase_ex/modules/routes/app_pages.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:responsive_sizer/responsive_sizer.dart';
 
 void main() {
   runApp(const MyApp());
@@ -7,15 +11,22 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+    return ResponsiveSizer(
+      builder: (p0, p1, p2) {
+        return GetMaterialApp(
+          debugShowCheckedModeBanner: false,
+          enableLog: true,
+          initialRoute: Routes.LOGIN,
+          title: 'Flutter Demo',
+          theme: ThemeData(
+            primarySwatch: Colors.blue,
+          ),
+          //home: LoginScreen()
+          getPages: AppPages.routes,
+        );
+      },
     );
   }
 }
