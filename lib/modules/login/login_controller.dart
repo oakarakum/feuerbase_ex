@@ -9,5 +9,8 @@ class LoginController extends GetxController {
     // Get.to(() => RegisterScreen());
     Get.toNamed(Routes.REGISTER);
   }
-  void 
+
+  void visible() {
+    isPasswordHidden.value = !isPasswordHidden.value;
+  }
 }

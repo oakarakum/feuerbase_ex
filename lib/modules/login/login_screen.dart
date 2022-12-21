@@ -143,11 +143,12 @@ class LoginScreen extends GetView<LoginController> {
                           ),
                           suffixIcon: GestureDetector(
                             onTap: () {
-                              controller.isPasswordHidden.value =
-                                  !controller.isPasswordHidden.value;
+                              controller.visible();
                             },
                             child: Icon(
-                              Icons.visibility,
+                              controller.isPasswordHidden == true
+                                  ? Icons.visibility
+                                  : Icons.visibility_off,
                               color: Color(0xffFFFFFF),
                             ),
                           ),
