@@ -124,39 +124,46 @@ class LoginScreen extends GetView<LoginController> {
                   padding: EdgeInsets.only(
                       bottom:
                           MediaQuery.of(context).viewInsets.top > 0 ? 22.h : 0),
-                  child: TextFormField(
-                    //password
-                    style: TextStyle(color: Color(0xffFFFFFF)),
-                    autovalidateMode: AutovalidateMode.onUserInteraction,
-                    validator: (value) {
-                      if (value!.isEmpty) {
-                        return "Field is empty";
-                      }
-                    },
-                    textAlignVertical: TextAlignVertical.center,
-                    decoration: InputDecoration(
-                      isDense: true,
-                      prefixIcon: Icon(
-                        Icons.key_sharp,
-                        color: Color(0xffFFFFFF),
-                      ),
-                      suffixIcon: Icon(
-                        Icons.visibility,
-                        color: Color(0xffFFFFFF),
-                      ),
-                      hintText: "Password",
-                      hintStyle: TextStyle(
-                          color: Color(0xffFFFFFF),
-                          letterSpacing: 1,
-                          fontWeight: FontWeight.w500),
-                      enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                              color: Color(0xffFFFFFF), width: 0.3.w)),
-                      focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                              color: Color(0xffFFFFFF), width: 0.4.w)),
-                    ),
-                  ),
+                  child: Obx(() => TextFormField(
+                        //password
+                        style: TextStyle(color: Color(0xffFFFFFF)),
+                        autovalidateMode: AutovalidateMode.onUserInteraction,
+                        obscureText: controller.isPasswordHidden.value,
+                        validator: (value) {
+                          if (value!.isEmpty) {
+                            return "Field is empty";
+                          }
+                        },
+                        textAlignVertical: TextAlignVertical.center,
+                        decoration: InputDecoration(
+                          isDense: true,
+                          prefixIcon: Icon(
+                            Icons.key_sharp,
+                            color: Color(0xffFFFFFF),
+                          ),
+                          suffixIcon: GestureDetector(
+                            onTap: () {
+                              controller.isPasswordHidden.value =
+                                  !controller.isPasswordHidden.value;
+                            },
+                            child: Icon(
+                              Icons.visibility,
+                              color: Color(0xffFFFFFF),
+                            ),
+                          ),
+                          hintText: "Password",
+                          hintStyle: TextStyle(
+                              color: Color(0xffFFFFFF),
+                              letterSpacing: 1,
+                              fontWeight: FontWeight.w500),
+                          enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                  color: Color(0xffFFFFFF), width: 0.3.w)),
+                          focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                  color: Color(0xffFFFFFF), width: 0.4.w)),
+                        ),
+                      )),
                 ),
                 SizedBox(
                   height: 1.h,
