@@ -54,15 +54,13 @@ class LoginScreen extends GetView<LoginController> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    
                     Text(
                       "E-Mail",
                       style: TextStyle(
-                            color: Color(0xffFFFFFF),
-                            letterSpacing: 1,
-                            fontWeight: FontWeight.w600,
-                            fontSize: 2.h
-                            ),
+                          color: Color(0xffFFFFFF),
+                          letterSpacing: 1,
+                          fontWeight: FontWeight.w600,
+                          fontSize: 2.h),
                     ),
                   ],
                 ),
@@ -70,10 +68,19 @@ class LoginScreen extends GetView<LoginController> {
                   height: 1.4.h,
                 ),
                 TextFormField(
-                  //e-mail
                   onTap: () {},
                   style: TextStyle(color: Color(0xffFFFFFF)),
                   keyboardType: TextInputType.emailAddress,
+                  autovalidateMode: AutovalidateMode.onUserInteraction,
+                  validator: (value) {
+                    if (!GetUtils.isEmail(value!)) {
+                      return "Email isn't valid";
+                    } else if (value.isEmpty) {
+                      return "Empty field";
+                    } else {
+                      return null;
+                    }
+                  },
                   textAlignVertical: TextAlignVertical.center,
                   decoration: InputDecoration(
                     isDense: true,
@@ -100,49 +107,55 @@ class LoginScreen extends GetView<LoginController> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    
                     Text(
                       "Password",
                       style: TextStyle(
-                            color: Color(0xffFFFFFF),
-                            letterSpacing: 1,
-                            fontWeight: FontWeight.w600,
-                            fontSize: 2.h
-                            ),
+                          color: Color(0xffFFFFFF),
+                          letterSpacing: 1,
+                          fontWeight: FontWeight.w600,
+                          fontSize: 2.h),
                     ),
                   ],
                 ),
                 SizedBox(
-                  height: 1.4.h,
+                  height: 1.h,
                 ),
-                
-                TextFormField(
-                  //password
-                  style: TextStyle(color: Color(0xffFFFFFF)),
-                  //inputFormatters: [FilteringTextInputFormatter.digitsOnly], sadece sayı olması için
-                  //keyboardType: TextInputType.number,
-                  textAlignVertical: TextAlignVertical.center,
-                  decoration: InputDecoration(
-                    isDense: true,
-                    prefixIcon: Icon(
-                      Icons.key_sharp,
-                      color: Color(0xffFFFFFF),
-                    ),
-                    suffixIcon: Icon(
-                      Icons.visibility,
-                      color: Color(0xffFFFFFF),
-                    ),
-                    hintText: "Password",
-                    hintStyle: TextStyle(
+                Padding(
+                  padding: EdgeInsets.only(
+                      bottom:
+                          MediaQuery.of(context).viewInsets.top > 0 ? 22.h : 0),
+                  child: TextFormField(
+                    //password
+                    style: TextStyle(color: Color(0xffFFFFFF)),
+                    autovalidateMode: AutovalidateMode.onUserInteraction,
+                    validator: (value) {
+                      if (value!.isEmpty) {
+                        return "Field is empty";
+                      }
+                    },
+                    textAlignVertical: TextAlignVertical.center,
+                    decoration: InputDecoration(
+                      isDense: true,
+                      prefixIcon: Icon(
+                        Icons.key_sharp,
                         color: Color(0xffFFFFFF),
-                        letterSpacing: 1,
-                        fontWeight: FontWeight.w500),
-                    enabledBorder: OutlineInputBorder(
-                        borderSide:
-                            BorderSide(color: Color(0xffFFFFFF), width: 0.3.w)),
-                    focusedBorder: OutlineInputBorder(
-                        borderSide:
-                            BorderSide(color: Color(0xffFFFFFF), width: 0.4.w)),
+                      ),
+                      suffixIcon: Icon(
+                        Icons.visibility,
+                        color: Color(0xffFFFFFF),
+                      ),
+                      hintText: "Password",
+                      hintStyle: TextStyle(
+                          color: Color(0xffFFFFFF),
+                          letterSpacing: 1,
+                          fontWeight: FontWeight.w500),
+                      enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                              color: Color(0xffFFFFFF), width: 0.3.w)),
+                      focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                              color: Color(0xffFFFFFF), width: 0.4.w)),
+                    ),
                   ),
                 ),
                 SizedBox(
@@ -197,6 +210,7 @@ class LoginScreen extends GetView<LoginController> {
                     ),
                     GestureDetector(
                       onTap: () {
+                        //Get.to(() => RegisterScreen());
                         controller.pageChanger();
                       },
                       child: Text("Create Now",

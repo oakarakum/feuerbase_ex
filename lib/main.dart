@@ -24,8 +24,8 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             primarySwatch: Colors.blue,
           ),
-          home: RegisterScreen()
-          //getPages: AppPages.routes,
+          //home: RegisterScreen()
+          getPages: AppPages.routes,
         );
       },
     );
