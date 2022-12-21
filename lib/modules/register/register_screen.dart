@@ -226,35 +226,48 @@ class RegisterScreen extends GetView<RegisterController> {
                         bottom: MediaQuery.of(context).viewInsets.bottom > 0
                             ? 22.h
                             : 0),
-                    child: TextFormField(
-                      //password
-                      style: TextStyle(color: Color(0xffFFFFFF)),
-                      //inputFormatters: [FilteringTextInputFormatter.digitsOnly], sadece sayı olması için
-                      //keyboardType: TextInputType.number,
-                      textAlignVertical: TextAlignVertical.center,
-                      decoration: InputDecoration(
-                        isDense: true,
-                        prefixIcon: Icon(
-                          Icons.key_sharp,
-                          color: Color(0xffFFFFFF),
-                        ),
-                        suffixIcon: Icon(
-                          Icons.visibility,
-                          color: Color(0xffFFFFFF),
-                        ),
-                        hintText: "Password",
-                        hintStyle: TextStyle(
-                            color: Color(0xffC4C4C4),
-                            letterSpacing: 1,
-                            fontWeight: FontWeight.w500),
-                        enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                                color: Color(0xffFFFFFF), width: 0.3.w)),
-                        focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                                color: Color(0xffFFFFFF), width: 0.4.w)),
-                      ),
-                    ),
+                    child: Obx(() => TextFormField(
+                          //password
+                          style: TextStyle(color: Color(0xffFFFFFF)),
+                          //inputFormatters: [FilteringTextInputFormatter.digitsOnly], sadece sayı olması için
+                          //keyboardType: TextInputType.number,
+                          obscureText:
+                              controller.registerVisibilityVariable.value,
+                          textAlignVertical: TextAlignVertical.center,
+                          decoration: InputDecoration(
+                            isDense: true,
+                            prefixIcon: Icon(
+                              Icons.key_sharp,
+                              color: Color(0xffFFFFFF),
+                            ),
+                            suffixIcon: GestureDetector(
+                              onTap: () {
+                                controller.registerVisible();
+                              },
+                              child: GestureDetector(
+                                onTap: () {
+                                  controller.registerVisible();
+                                },
+                                child: Icon(
+                                  controller.registerVisiblityIcon(),
+                                  color: Color(0xffFFFFFF),
+                                  size: 3.5.h,
+                                ),
+                              ),
+                            ),
+                            hintText: "Password",
+                            hintStyle: TextStyle(
+                                color: Color(0xffC4C4C4),
+                                letterSpacing: 1,
+                                fontWeight: FontWeight.w500),
+                            enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    color: Color(0xffFFFFFF), width: 0.3.w)),
+                            focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    color: Color(0xffFFFFFF), width: 0.4.w)),
+                          ),
+                        )),
                   ),
                   SizedBox(
                     height: 1.h,

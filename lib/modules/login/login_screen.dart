@@ -127,8 +127,9 @@ class LoginScreen extends GetView<LoginController> {
                   child: Obx(() => TextFormField(
                         //password
                         style: TextStyle(color: Color(0xffFFFFFF)),
-                        autovalidateMode: AutovalidateMode.onUserInteraction,
                         obscureText: controller.isPasswordHidden.value,
+                        autovalidateMode: AutovalidateMode.onUserInteraction,
+
                         validator: (value) {
                           if (value!.isEmpty) {
                             return "Field is empty";
@@ -146,10 +147,9 @@ class LoginScreen extends GetView<LoginController> {
                               controller.visible();
                             },
                             child: Icon(
-                              controller.isPasswordHidden == true
-                                  ? Icons.visibility
-                                  : Icons.visibility_off,
+                              controller.visibleIcon(),
                               color: Color(0xffFFFFFF),
+                              size: 3.5.h,
                             ),
                           ),
                           hintText: "Password",
