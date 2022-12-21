@@ -1,3 +1,4 @@
+import 'package:feuerbase_ex/d.dart';
 import 'package:feuerbase_ex/modules/login/login_screen.dart';
 import 'package:feuerbase_ex/modules/register/register_screen.dart';
 import 'package:feuerbase_ex/modules/routes/app_pages.dart';
@@ -5,7 +6,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await DependencyInjection.init();
   runApp(const MyApp());
 }
 

@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "1007983380677",
+    "project_id": "firstproject-bac86",
+    "storage_bucket": "firstproject-bac86.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1007983380677:android:2f0d0e5a9ba94559ac08ac",
+        "android_client_info": {
+          "package_name": "com.example.feuerbase_ex"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1007983380677-ear83e01mroiqo53l69pdes64ibi1tdo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGN9gCLLPn9BeVCF8v56JLjqDZCqq_Gs0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1007983380677-ear83e01mroiqo53l69pdes64ibi1tdo.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1007983380677-ecroootn62rttkobii300gvfl1pq3qff.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.feuerbaseEx"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
