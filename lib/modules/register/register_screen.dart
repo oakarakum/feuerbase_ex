@@ -71,7 +71,7 @@ class RegisterScreen extends GetView<RegisterController> {
                     height: 1.4.h,
                   ),
                   TextFormField(
-                    onTap: () {},
+                    onChanged: (value) {},
                     style: TextStyle(color: Color(0xffFFFFFF)),
                     keyboardType: TextInputType.emailAddress,
                     autovalidateMode: AutovalidateMode.onUserInteraction,
@@ -119,7 +119,9 @@ class RegisterScreen extends GetView<RegisterController> {
                     height: 1.4.h,
                   ),
                   TextFormField(
-                    onTap: () {},
+                    onChanged: (value) {
+                      controller.email = value;
+                    },
                     style: TextStyle(color: Color(0xffC4C4C4)),
                     keyboardType: TextInputType.emailAddress,
                     autovalidateMode: AutovalidateMode.onUserInteraction,
@@ -170,7 +172,7 @@ class RegisterScreen extends GetView<RegisterController> {
                     height: 1.4.h,
                   ),
                   TextFormField(
-                    onTap: () {},
+                    onChanged: (value) {},
                     style: TextStyle(color: Color(0xffFFFFFF)),
                     keyboardType: TextInputType.phone,
                     inputFormatters: [FilteringTextInputFormatter.digitsOnly],
@@ -227,7 +229,9 @@ class RegisterScreen extends GetView<RegisterController> {
                             ? 22.h
                             : 0),
                     child: Obx(() => TextFormField(
-                          //password
+                          onChanged: (value) {
+                            controller.password = value;
+                          },
                           style: TextStyle(color: Color(0xffFFFFFF)),
                           //inputFormatters: [FilteringTextInputFormatter.digitsOnly], sadece sayı olması için
                           //keyboardType: TextInputType.number,
@@ -275,7 +279,10 @@ class RegisterScreen extends GetView<RegisterController> {
                   Padding(
                     padding: EdgeInsets.only(top: 3.h, left: 3.w, right: 3.w),
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        controller.register.createAccount(
+                            controller.email, controller.password);
+                      },
                       style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.blue,
                           side: BorderSide(color: Colors.black, width: 0.25.w),

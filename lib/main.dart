@@ -1,4 +1,4 @@
-import 'package:feuerbase_ex/d.dart';
+import 'package:feuerbase_ex/di.dart';
 import 'package:feuerbase_ex/modules/routes/app_pages.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
