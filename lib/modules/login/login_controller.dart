@@ -1,9 +1,11 @@
 // ignore_for_file: unrelated_type_equality_checks
 
+import 'package:feuerbase_ex/modules/login/login_screen.dart';
 import 'package:feuerbase_ex/modules/register/register_screen.dart';
 import 'package:feuerbase_ex/shared/services/auth_service.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:responsive_sizer/responsive_sizer.dart';
 
 import '../routes/app_pages.dart';
 
@@ -16,6 +18,26 @@ class LoginController extends GetxController {
   void pageChanger() {
     // Get.to(() => RegisterScreen());
     Get.toNamed(Routes.REGISTER);
+  }
+
+  Future openDialog() async {
+    AlertDialog(
+      content: Text(
+        "Succes",
+        style: TextStyle(color: Colors.white, fontSize: 2.5.h),
+      ),
+      actions: [
+        GestureDetector(
+          onTap: () {
+            Get.toNamed(Routes.LOGIN);
+          },
+          child: Text(
+            "Succes",
+            style: TextStyle(color: Colors.white, fontSize: 2.5.h),
+          ),
+        ),
+      ],
+    );
   }
 
   void visible() {
