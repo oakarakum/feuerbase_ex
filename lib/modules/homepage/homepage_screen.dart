@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, sort_child_properties_last
+// ignore_for_file: prefer_const_constructors, sort_child_properties_last, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
@@ -77,10 +77,61 @@ class HomepageScreen extends StatelessWidget {
                             color: Colors.white,
                           ),
                         ),
-                      )
+                      ),
                     ],
                   ),
                 ),
+                SizedBox(
+                  height: 50.h,
+                  width: 100.w,
+                  child: ListView.builder(
+                    itemBuilder: (context, index) {
+                      return Padding(
+                        padding: EdgeInsets.symmetric(vertical: 2.h),
+                        child: PhysicalModel(
+                          color: Colors.pink,
+                          elevation: 2.h,
+                          child: SizedBox(
+                              height: 20.h,
+                              width: 30.w,
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Padding(
+                                    padding:
+                                        EdgeInsets.only(left: 2.w, top: 2.w),
+                                    child: Row(
+                                      children: [
+                                        CircleAvatar(
+                                          backgroundColor: Colors.white,
+                                          child: Image.asset(
+                                              "assets/blank-profile-picture-png-400x400.png"),
+                                        ),
+                                        SizedBox(width: 2.w),
+                                        Text(
+                                          "Writer Name-Surname",
+                                          style: TextStyle(
+                                              color: Color(0xffFFFFFF),
+                                              fontWeight: FontWeight.w600),
+                                        ),
+                                        Padding(
+                                          padding: EdgeInsets.only(top: 1.1.h),
+                                          child: Image.asset(
+                                            "assets/checkmark.png",
+                                            color: Color(0xffFFFFFF),
+                                          ),
+                                        )
+                                      ],
+                                    ),
+                                  )
+                                ],
+                              )),
+                        ),
+                      );
+                    },
+                  ),
+                )
               ],
             ),
           ),

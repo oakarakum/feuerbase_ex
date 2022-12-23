@@ -1,3 +1,4 @@
+import 'package:feuerbase_ex/modules/blog_writing.dart/blog_screen.dart';
 import 'package:feuerbase_ex/modules/homepage/homepage_screen.dart';
 import 'package:feuerbase_ex/modules/login/login_binding.dart';
 import 'package:feuerbase_ex/modules/login/login_screen.dart';
@@ -27,6 +28,10 @@ class AppPages {
     GetPage(
       name: Routes.HOME,
       page: () => HomepageScreen(),
+    ),
+    GetPage(
+      name: Routes.BLOG,
+      page: () => BlogScreen(),
     ),
   ];
 }
