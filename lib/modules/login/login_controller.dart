@@ -20,26 +20,6 @@ class LoginController extends GetxController {
     Get.toNamed(Routes.REGISTER);
   }
 
-  Future openDialog() async {
-    AlertDialog(
-      content: Text(
-        "Succes",
-        style: TextStyle(color: Colors.white, fontSize: 2.5.h),
-      ),
-      actions: [
-        GestureDetector(
-          onTap: () {
-            Get.toNamed(Routes.LOGIN);
-          },
-          child: Text(
-            "Succes",
-            style: TextStyle(color: Colors.white, fontSize: 2.5.h),
-          ),
-        ),
-      ],
-    );
-  }
-
   void visible() {
     isPasswordHidden.value = !isPasswordHidden.value;
   }

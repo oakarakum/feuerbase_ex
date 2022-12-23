@@ -197,7 +197,6 @@ class LoginScreen extends GetView<LoginController> {
                       onPressed: () {
                         controller.login
                             .signIn(controller.email, controller.password);
-                        controller.openDialog();
                       },
                       style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.green,

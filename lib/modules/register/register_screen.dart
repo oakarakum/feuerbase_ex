@@ -280,8 +280,8 @@ class RegisterScreen extends GetView<RegisterController> {
                     padding: EdgeInsets.only(top: 3.h, left: 3.w, right: 3.w),
                     child: ElevatedButton(
                       onPressed: () {
-                        controller.register.createAccount(
-                            controller.email, controller.password);
+                        controller.register
+                            .createUser(controller.email, controller.password);
                       },
                       style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.blue,

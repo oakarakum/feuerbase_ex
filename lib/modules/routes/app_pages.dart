@@ -1,3 +1,4 @@
+import 'package:feuerbase_ex/modules/homepage/homepage_screen.dart';
 import 'package:feuerbase_ex/modules/login/login_binding.dart';
 import 'package:feuerbase_ex/modules/login/login_screen.dart';
 import 'package:feuerbase_ex/modules/register/register_binding.dart';
@@ -22,6 +23,10 @@ class AppPages {
     GetPage(
       name: Routes.SPLASH,
       page: () => LoginScreen(),
+    ),
+    GetPage(
+      name: Routes.HOME,
+      page: () => HomepageScreen(),
     ),
   ];
 }
