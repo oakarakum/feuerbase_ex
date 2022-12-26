@@ -16,9 +16,24 @@ class BlogScreen extends GetView<BlogController> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text("Title"),
-          TextFormField(),
+          TextFormField(
+            onSaved: (newValue) {
+              newValue = controller.title;
+            },
+          ),
           Text("Content"),
-          TextFormField(),
+          TextFormField(
+            onSaved: (newValue) {
+              newValue = controller.topic;
+            },
+          ),
+          ElevatedButton(
+              onPressed: () {
+                controller.blog.addBlog();
+              },
+              child: Center(
+                child: Text("Push"),
+              ))
         ],
       ),
     );
