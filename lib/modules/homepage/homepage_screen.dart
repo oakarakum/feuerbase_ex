@@ -1,7 +1,6 @@
 // ignore_for_file: prefer_const_constructors, sort_child_properties_last, prefer_const_literals_to_create_immutables
 
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:feuerbase_ex/modules/blog_writing.dart/blog_screen.dart';
 import 'package:feuerbase_ex/modules/homepage/homepage_controller.dart';
 import 'package:feuerbase_ex/modules/routes/app_pages.dart';
 import 'package:flutter/material.dart';
@@ -142,7 +141,17 @@ class HomepageScreen extends GetView<HomepageController> {
                                                       "assets/checkmark.png",
                                                       color: Color(0xffFFFFFF),
                                                     ),
-                                                  )
+                                                  ),
+                                                  Spacer(),
+                                                  GestureDetector(
+                                                      onTap: () {
+                                                        controller.storage
+                                                            .deleteBlog(snapshot
+                                                                .data!
+                                                                .docs[index]
+                                                                .id);
+                                                      },
+                                                      child: Icon(Icons.delete))
                                                 ],
                                               ),
                                             ),

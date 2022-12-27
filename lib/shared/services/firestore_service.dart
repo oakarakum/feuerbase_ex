@@ -21,4 +21,9 @@ class FireStoreService extends GetxService {
     var ref = FirebaseFirestore.instance.collection("blog").snapshots();
     return ref;
   }
+
+  //Döküman silme
+  void deleteBlog(id) {
+    FirebaseFirestore.instance.collection("blog").doc(id).delete();
+  }
 }
