@@ -20,13 +20,13 @@ class MyApp extends StatelessWidget {
         return GetMaterialApp(
           debugShowCheckedModeBanner: false,
           enableLog: true,
-          initialRoute: Routes.LOGIN,
+          initialRoute: Routes.SPLASH,
+          getPages: AppPages.routes,
           title: 'Flutter Demo',
           theme: ThemeData(
             primarySwatch: Colors.blue,
           ),
           //home: RegisterScreen()
-          getPages: AppPages.routes,
         );
       },
     );

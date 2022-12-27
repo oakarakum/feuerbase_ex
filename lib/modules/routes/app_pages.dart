@@ -9,6 +9,7 @@ import 'package:feuerbase_ex/modules/login/login_screen.dart';
 import 'package:feuerbase_ex/modules/register/register_binding.dart';
 import 'package:feuerbase_ex/modules/register/register_screen.dart';
 import 'package:feuerbase_ex/modules/splash/splash_binding.dart';
+import 'package:feuerbase_ex/modules/splash/splash_screen.dart';
 import 'package:get/get.dart';
 part 'app_routes.dart';
 //part of 'app_routes.dart';
@@ -19,24 +20,24 @@ class AppPages {
   static final routes = [
     GetPage(
       name: Routes.LOGIN,
-      page: () => LoginScreen(),
+      page: () => const LoginScreen(),
       binding: LoginBinding(),
     ),
     GetPage(
         name: Routes.REGISTER,
-        page: () => RegisterScreen(),
+        page: () => const RegisterScreen(),
         binding: RegisterBinding()),
     GetPage(
         name: Routes.SPLASH,
-        page: () => LoginScreen(),
+        page: () => const SplashScreen(),
         binding: SplashBinding()),
     GetPage(
         name: Routes.HOME,
-        page: () => HomepageScreen(),
+        page: () => const HomepageScreen(),
         binding: HomepageBinding()),
     GetPage(
       name: Routes.BLOG,
-      page: () => BlogScreen(),
+      page: () => const BlogScreen(),
       binding: BlogBinding(),
     ),
   ];

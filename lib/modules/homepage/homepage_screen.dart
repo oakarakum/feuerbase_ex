@@ -162,14 +162,19 @@ class HomepageScreen extends GetView<HomepageController> {
                                                     left: 3.w,
                                                     top: 3.w,
                                                     right: 3.w),
-                                                child: Text(
-                                                  "${blogList["Topic"]}",
-                                                  //overflow: TextOverflow.ellipsis,
-                                                  style: TextStyle(
-                                                      color: Color(0xffFFFFFF),
-                                                      fontSize: 2.4.h,
-                                                      fontWeight:
-                                                          FontWeight.w400),
+                                                child: SizedBox(
+                                                  height: 11.1.h,
+                                                  width: 100.w,
+                                                  child: Text(
+                                                    "${blogList["Topic"]}",
+                                                    //overflow: TextOverflow.ellipsis,
+                                                    style: TextStyle(
+                                                        color:
+                                                            Color(0xffFFFFFF),
+                                                        fontSize: 2.4.h,
+                                                        fontWeight:
+                                                            FontWeight.w400),
+                                                  ),
                                                 )),
                                             Padding(
                                                 padding: EdgeInsets.only(

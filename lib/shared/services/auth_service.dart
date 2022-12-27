@@ -11,10 +11,9 @@ class AuthService extends GetxService {
 
   Future signIn(email, password) async {
     try {
-      final credential = await FirebaseAuth.instance
+      await FirebaseAuth.instance
           .signInWithEmailAndPassword(email: email, password: password)
           // Get.toNamed(Routes.LOGIN);
-
           .then((value) => Get.toNamed(Routes.HOME));
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
