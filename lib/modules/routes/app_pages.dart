@@ -10,6 +10,9 @@ import 'package:feuerbase_ex/modules/register/register_binding.dart';
 import 'package:feuerbase_ex/modules/register/register_screen.dart';
 import 'package:feuerbase_ex/modules/splash/splash_binding.dart';
 import 'package:feuerbase_ex/modules/splash/splash_screen.dart';
+import 'package:feuerbase_ex/modules/update_blog/update_binding.dart';
+import 'package:feuerbase_ex/modules/update_blog/update_controller.dart';
+import 'package:feuerbase_ex/modules/update_blog/update_screen.dart';
 import 'package:get/get.dart';
 part 'app_routes.dart';
 //part of 'app_routes.dart';
@@ -40,5 +43,9 @@ class AppPages {
       page: () => const BlogScreen(),
       binding: BlogBinding(),
     ),
+    GetPage(
+        name: Routes.UPDATE,
+        page: () => const UpdateScreen(),
+        binding: UpdateBinding())
   ];
 }

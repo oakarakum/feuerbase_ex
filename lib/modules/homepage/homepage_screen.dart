@@ -116,7 +116,9 @@ class HomepageScreen extends GetView<HomepageController> {
                                           children: [
                                             Padding(
                                               padding: EdgeInsets.only(
-                                                  left: 2.w, top: 2.w),
+                                                  left: 2.w,
+                                                  top: 2.w,
+                                                  right: 2.w),
                                               child: Row(
                                                 children: [
                                                   CircleAvatar(
@@ -151,7 +153,10 @@ class HomepageScreen extends GetView<HomepageController> {
                                                                 .docs[index]
                                                                 .id);
                                                       },
-                                                      child: Icon(Icons.delete))
+                                                      child: Icon(
+                                                        Icons.delete,
+                                                        color: Colors.red,
+                                                      ))
                                                 ],
                                               ),
                                             ),
