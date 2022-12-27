@@ -4,6 +4,8 @@ import 'package:feuerbase_ex/modules/blog_writing.dart/blog_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../routes/app_pages.dart';
+
 class BlogScreen extends GetView<BlogController> {
   const BlogScreen({super.key});
 
@@ -17,22 +19,20 @@ class BlogScreen extends GetView<BlogController> {
         children: [
           Text("Title"),
           TextFormField(
-            onSaved: (newValue) {
-              newValue = controller.title;
-            },
+            controller: controller.title,
           ),
           Text("Content"),
           TextFormField(
-            onSaved: (newValue) {
-              newValue = controller.topic;
-            },
+            controller: controller.topic,
           ),
           ElevatedButton(
               onPressed: () {
-                controller.blog.addBlog();
+                controller.storage
+                    .addBlog(controller.title.text, controller.topic.text);
+                Get.toNamed(Routes.HOME);
               },
               child: Center(
-                child: Text("Push"),
+                child: Text("Publish the Blog"),
               ))
         ],
       ),

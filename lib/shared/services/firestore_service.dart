@@ -9,14 +9,20 @@ class FireStoreService extends GetxService {
     return this;
   }
 
-  addBlog() async {
-    var adding =
-        await FirebaseFirestore.instance.collection('blog').doc('my_blog');
-    final json = {
-      'title': 'blog5',
-      'topic': 21,
-    };
+  //Veri ekleme
+  addBlog(title, topic) async {
+    Map<String, dynamic> blogValue = {"Title": title, "Topic": topic};
 
-    await adding.set(json);
+    FirebaseFirestore.instance.collection("blog").add(blogValue);
+    // 2. yöntem
+/*     CollectionReference collectionReference =
+        FirebaseFirestore.instance.collection("blog");
+        collectionReference.add(blogValue); */
+  }
+
+  //Veri okuma
+  Stream<QuerySnapshot> readBlog() {
+    var ref = FirebaseFirestore.instance.collection("blog").snapshots();
+    return ref;
   }
 }
