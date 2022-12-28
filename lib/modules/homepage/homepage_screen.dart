@@ -3,6 +3,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:feuerbase_ex/modules/homepage/homepage_controller.dart';
 import 'package:feuerbase_ex/modules/routes/app_pages.dart';
+import 'package:feuerbase_ex/modules/update_blog/update_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
@@ -226,6 +227,15 @@ class HomepageScreen extends GetView<HomepageController> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
+                    ElevatedButton(
+                      onPressed: () {
+                        Get.toNamed(Routes.UPDATE);
+                      },
+                      child: Text("Update Screen"),
+                    ),
+                    SizedBox(
+                      width: 20.w,
+                    ),
                     FloatingActionButton(
                       backgroundColor: Color(0xff718792),
                       onPressed: () {

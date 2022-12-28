@@ -45,7 +45,7 @@ class AppPages {
     ),
     GetPage(
         name: Routes.UPDATE,
-        page: () => const UpdateScreen(),
+        page: () => UpdateScreen(),
         binding: UpdateBinding())
   ];
 }

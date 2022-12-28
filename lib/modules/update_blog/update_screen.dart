@@ -102,15 +102,32 @@ class UpdateScreen extends GetView<UpdateController> {
                 ),
               ),
             ),
-            ElevatedButton(
-                onPressed: () {
-                  /* controller.storage
-                      .addBlog(controller.title.text, controller.topic.text); */
-                  Get.toNamed(Routes.HOME);
-                },
-                child: Center(
-                  child: Text("Publish the Blog"),
-                ))
+            Row(
+              children: [
+                ElevatedButton(
+                    onPressed: () {
+                      /* controller.storage
+                          .addBlog(controller.title.text, controller.topic.text); */
+                      Get.toNamed(Routes.HOME);
+                    },
+                    child: Center(
+                      child: Text("Publish the Blog"),
+                    )),
+                SizedBox(
+                  width: 20.w,
+                ),
+                ElevatedButton(
+                    onPressed: () {
+                      controller.analyticsService.logEvent();
+                    },
+                    child: Center(
+                      child: Text(
+                        "Crash Analytics",
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ))
+              ],
+            ),
           ],
         ),
       ),
