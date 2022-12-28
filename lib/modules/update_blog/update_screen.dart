@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:feuerbase_ex/modules/update_blog/update_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -48,7 +49,7 @@ class UpdateScreen extends GetView<UpdateController> {
               padding: EdgeInsets.only(top: 2.h),
               child: TextFormField(
                 textAlignVertical: TextAlignVertical.top,
-                //controller: controller.title,
+                controller: controller.updateTitle,
                 style: TextStyle(color: Color(0xfFFFFFFF), letterSpacing: .5.w),
                 decoration: InputDecoration(
                     /* labelText: "Title", label text
@@ -84,7 +85,7 @@ class UpdateScreen extends GetView<UpdateController> {
                 height: 62.h,
                 width: 100.w,
                 child: TextFormField(
-                  //controller: controller.topic,
+                  controller: controller.updateTopic,
                   style:
                       TextStyle(color: Color(0xfFFFFFFF), letterSpacing: .5.w),
                   maxLines: 45,
@@ -106,12 +107,14 @@ class UpdateScreen extends GetView<UpdateController> {
               children: [
                 ElevatedButton(
                     onPressed: () {
+                      controller.upToDate.updateBlog(controller.document_id,
+                          controller.updateTitle, controller.updateTopic);
                       /* controller.storage
                           .addBlog(controller.title.text, controller.topic.text); */
-                      Get.toNamed(Routes.HOME);
+                      //Get.toNamed(Routes.HOME);
                     },
                     child: Center(
-                      child: Text("Publish the Blog"),
+                      child: Text("Update the Blog"),
                     )),
                 SizedBox(
                   width: 20.w,

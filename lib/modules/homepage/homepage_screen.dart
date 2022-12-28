@@ -157,7 +157,34 @@ class HomepageScreen extends GetView<HomepageController> {
                                                       child: Icon(
                                                         Icons.delete,
                                                         color: Colors.red,
-                                                      ))
+                                                      )),
+                                                  ////////////
+                                                  GestureDetector(
+                                                      onTap: () {
+                                                        controller.document_id =
+                                                            snapshot.data!
+                                                                .docs[index].id;
+                                                        controller
+                                                                .updateController
+                                                                .document_id =
+                                                            controller
+                                                                .document_id;
+                                                        //  controller.storage.updateBlog(snapshot.data!.docs[index].id, title, topic)
+                                                        Get.toNamed(
+                                                            Routes.UPDATE);
+                                                        print(snapshot.data!
+                                                            .docs[index].id);
+                                                      },
+                                                      child: Icon(
+                                                        Icons.update,
+                                                        color: Colors.white,
+                                                      )),
+                                                  /* ElevatedButton(
+                      onPressed: () {
+                        Get.toNamed(Routes.UPDATE);
+                      },
+                      child: Text("Update Screen"),
+                    ), */
                                                 ],
                                               ),
                                             ),
@@ -227,12 +254,6 @@ class HomepageScreen extends GetView<HomepageController> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    ElevatedButton(
-                      onPressed: () {
-                        Get.toNamed(Routes.UPDATE);
-                      },
-                      child: Text("Update Screen"),
-                    ),
                     SizedBox(
                       width: 20.w,
                     ),
