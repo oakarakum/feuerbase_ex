@@ -108,7 +108,8 @@ class UpdateScreen extends GetView<UpdateController> {
                 ElevatedButton(
                     onPressed: () {
                       controller.upToDate.updateBlog(controller.document_id,
-                          controller.updateTitle, controller.updateTopic);
+                          controller.updateTitle.text, controller.updateTopic.text);
+                        
                       /* controller.storage
                           .addBlog(controller.title.text, controller.topic.text); */
                       //Get.toNamed(Routes.HOME);
