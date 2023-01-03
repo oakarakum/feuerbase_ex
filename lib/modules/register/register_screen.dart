@@ -99,24 +99,21 @@ class RegisterScreen extends GetView<RegisterController> {
                               color: Color(0xffFFFFFF), width: 0.4.w)),
                     ),
                   ),
-                  SizedBox(
-                    height: 1.4.h,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Text(
-                        "E-Mail",
-                        style: TextStyle(
-                            color: Color(0xffFFFFFF),
-                            letterSpacing: 1,
-                            fontWeight: FontWeight.w600,
-                            fontSize: 2.h),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 1.4.h,
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 1.4.h),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Text(
+                          "E-Mail",
+                          style: TextStyle(
+                              color: Color(0xffFFFFFF),
+                              letterSpacing: 1,
+                              fontWeight: FontWeight.w600,
+                              fontSize: 2.h),
+                        ),
+                      ],
+                    ),
                   ),
                   TextFormField(
                     onChanged: (value) {

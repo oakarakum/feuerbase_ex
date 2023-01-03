@@ -93,7 +93,23 @@ class HomepageScreen extends GetView<HomepageController> {
                       stream: controller.storage.readBlog(),
                       builder: ((context, snapshot) {
                         return !snapshot.hasData
-                            ? LinearProgressIndicator()
+                            ? Center(
+                                child: Row(
+                                  children: [
+                                    CircularProgressIndicator(
+                                      color: Colors.white,
+                                    ),
+                                    SizedBox(
+                                      width: 5.w,
+                                    ),
+                                    Text(
+                                      "Loading....",
+                                      style: TextStyle(
+                                          color: Colors.white, fontSize: 5.h),
+                                    ),
+                                  ],
+                                ),
+                              )
                             : ListView.builder(
                                 itemCount: snapshot.data!.docs.length,
                                 itemBuilder: (context, index) {
