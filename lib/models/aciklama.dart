@@ -1,0 +1,1 @@
+//modelleri bunun içine bu 2sinin içinbe yazılacak

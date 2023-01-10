@@ -1,5 +1,6 @@
 // ignore_for_file: unrelated_type_equality_checks
 
+import 'package:feuerbase_ex/api/api_repository.dart';
 import 'package:feuerbase_ex/shared/services/auth_service.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -7,6 +8,8 @@ import 'package:get/get.dart';
 import '../routes/app_pages.dart';
 
 class LoginController extends GetxController {
+  LoginController({required this.apiRepository});
+  final ApiRepository apiRepository;
   var isPasswordHidden = true.obs;
   String email = "";
   String password = "";
@@ -27,5 +30,9 @@ class LoginController extends GetxController {
     } else {
       return Icons.visibility_off;
     }
+  }
+
+  login2() {
+    apiRepository.login(email, password);
   }
 }

@@ -1,3 +1,4 @@
+import 'package:feuerbase_ex/app_binding.dart';
 import 'package:feuerbase_ex/di.dart';
 import 'package:feuerbase_ex/modules/routes/app_pages.dart';
 import 'package:flutter/material.dart';
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           enableLog: true,
           initialRoute: Routes.SPLASH,
+          initialBinding: AppBinding(),
           getPages: AppPages.routes,
           title: 'Flutter Demo',
           theme: ThemeData(
